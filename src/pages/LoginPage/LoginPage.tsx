@@ -1,4 +1,3 @@
-import { yupResolver } from "@hookform/resolvers/yup/src/yup.js";
 import AppButton from "../../components/UI/AppButton/AppButton";
 import AppInput from "../../components/UI/AppInput/AppInput";
 import AppLink from "../../components/UI/AppLink/AppLink";
@@ -6,6 +5,7 @@ import { AppRegistration } from "../../components/UI/AppRegistratoin/AppRegistra
 // import "./LoginPage.scss";
 import { SCLoginPage } from "./LoginPage.style";
 import * as yup from 'yup'
+import { yupResolver } from "@hookform/resolvers/yup/src/yup.js";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 interface ILoginForm {
@@ -13,6 +13,12 @@ interface ILoginForm {
     userpassword: string
 }
 export const LoginPage = () => {
+const loginFormSchema = yup.object({
+  useremail: yup.string().email().required('ОБЯЗАТЕЛЬНОЕ ПОЛЕ'),
+  userpassword: yup.string().min(6, 'ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ БОЛЕЕ 4 СИМВОЛОВ!').required('ОБЯЗАТЕЛЬНОЕ ПОЛЕ!')
+})
+
+
 const onLoginSubmit = (data : ILoginForm)=> {
   console.log(data);
   if (data) {
@@ -20,11 +26,13 @@ const onLoginSubmit = (data : ILoginForm)=> {
   }
 }
 const navigate = useNavigate()
-const {control, handleSubmit} = useForm({
+const {control, handleSubmit, formState:{errors}} = useForm({
   defaultValues: {
     useremail: "",
     userpassword: ""
-  }
+  },
+  resolver: yupResolver(loginFormSchema)
+
 })
   return (
     <SCLoginPage className="LoginPage">
@@ -35,14 +43,19 @@ const {control, handleSubmit} = useForm({
       control={control}
       name='useremail'
       render ={({field})=>(
-        <AppInput inputType="email" inputPlaceholder="Ваш email" {...field}/>
+        <AppInput inputType="email" inputPlaceholder="Ваш email" {...field}
+        isError={errors.useremail ? true : false}
+        errorText={errors.useremail ?.message}/>
       )}
       />      
       <Controller 
       control={control}
       name='userpassword'
       render ={({field})=>(
-        <AppInput inputType="password" inputPlaceholder="Пароль" {...field}/>
+        <AppInput inputType="password" inputPlaceholder="Пароль" {...field }
+        isError={errors.userpassword ? true : false}
+        errorText={errors.userpassword ?.message}
+        />
         )}
       />   
           {/* <AppInput inputType="email" inputPlaceholder="Ваш email"/>

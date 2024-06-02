@@ -11,7 +11,7 @@ export const App = () => {
   },
 
   {
-    path:"/login-page",
+    path:"/main-page",
     element:<MainPage/>
   },
   {
