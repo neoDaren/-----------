@@ -29,7 +29,6 @@
   .MainPage {
     grid-template-areas: "L M";
     grid-template-columns: 290px auto;
-
     .RightSide {
       display: none;
     }
@@ -39,7 +38,6 @@
 @media (max-width: 730px) {
   .MainPage {
     display: block;
-
     .LeftSide {
       display: none;
     }

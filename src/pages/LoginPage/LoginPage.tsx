@@ -8,22 +8,46 @@ import * as yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup/src/yup.js";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+// import { useDispatch, useSelector } from 'react-redux'
+// import { RootState } from "../../store/store";
+// import { changeUsers } from "../../store/useSlice";
+import { useLoginUserMutation } from "../../store/Api/authApi";
+import { useEffect } from "react";
 interface ILoginForm {
     useremail: string,
     userpassword: string
 }
-export const LoginPage = () => {
+// const mockUser = {
+//   mail: 'lox2409@gmail.com',
+//   phone_number: '+99890123456789',
+//   user_id: 1,
+//   name: 'Я не гей]',
+//   reg_date: new Date().toISOString(),
+//   city: 'moskva'
+// }
+
+
 const loginFormSchema = yup.object({
   useremail: yup.string().email().required('ОБЯЗАТЕЛЬНОЕ ПОЛЕ'),
   userpassword: yup.string().min(6, 'ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ БОЛЕЕ 4 СИМВОЛОВ!').required('ОБЯЗАТЕЛЬНОЕ ПОЛЕ!')
 })
 
+export const LoginPage = () => {
+const [loginUser, {data:userData}] = useLoginUserMutation()
+  // const user = useSelector((state:RootState) => state.userSlice.user)
+  // const dispatch = useDispatch()
+  
 
 const onLoginSubmit = (data : ILoginForm)=> {
+  loginUser({email:data.useremail, password:data.userpassword})
+  // dispatch(changeUsers(mockUser))
   console.log(data);
-  if (data) {
-    navigate("/login-page");
-  }
+  // if (data) {
+  //   navigate("/profile-page");
+  // }
+  // console.log(user);
+  
+ 
 }
 const navigate = useNavigate()
 const {control, handleSubmit, formState:{errors}} = useForm({
@@ -32,8 +56,14 @@ const {control, handleSubmit, formState:{errors}} = useForm({
     userpassword: ""
   },
   resolver: yupResolver(loginFormSchema)
-
 })
+useEffect(()=> {
+  if (userData?.user_id) {
+    navigate("/profile-page")
+  }
+  console.log(userData);
+  
+},[userData,navigate])
   return (
     <SCLoginPage className="LoginPage">
       <h1>Авторизация</h1>
