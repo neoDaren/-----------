@@ -3,6 +3,7 @@ import { LoginPage } from './pages/LoginPage/LoginPage.tsx'
 import { MainPage } from './pages/MainPage/MainPage.tsx'
 import { ProfilePage } from './pages/ProfilePage/ProfilePage.tsx'
 import {RegPage, } from './pages/RegPage/RegPage.tsx'
+import { PostPage } from './pages/PostPage/PostPage.tsx';
 export const App = () => {
   const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const App = () => {
     path:"/profile-page",
     element:<ProfilePage/>
   },
+  {
+    path:'/post/:postId',
+    element: <PostPage/>,
+}
   ])
   return(
   <>

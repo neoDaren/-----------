@@ -1,7 +1,9 @@
 import { Header } from "../../components/UI/Header/Header";
 import { NavBar } from "../../components/UI/NavBar/NavBar";
+import { Post } from "../../components/UI/Post/Post";
 import { Heading } from "../../components/UI/Typography/Heading";
 import { UserElem } from "../../components/UI/UserElem/UserElem";
+import { useGetPostListQuery } from "../../store/Api/postApi";
 import "./MainPage.scss";
 
 const userSubscribeData = [
@@ -99,6 +101,7 @@ const userMusicData = [
   },
 ]
 export const MainPage = () => {
+  const {data, isLoading}= useGetPostListQuery(null)
 return (  
     <>
       <Header/>
@@ -262,7 +265,7 @@ return (
                 </div>
               </div>
             </div>
-            <div className="Post _liked _marked">
+            {/* <div className="Post _liked _marked">
               <div className="UserElem">
                 <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
                 <div className="user__description">
@@ -393,7 +396,16 @@ return (
                   <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
                 </g>
               </svg>
-            </div>
+            </div> */}
+            {
+              isLoading && <h3>Idet zagruzka...</h3>
+            }
+            {
+              data?.message.length && data. message.map((post)=>(
+                <Post mainText={post.main_text} userName={post.user_fk.name} regDate={post.reg_date}/>
+              ))
+            }
+        
             <div className="Post Repost _liked _marked">
               <div className="UserElem Repost__owner">
                 <img src="./img/users/mark-krahmalev.jpeg" alt="User" />
