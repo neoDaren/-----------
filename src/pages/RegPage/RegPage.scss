@@ -1,60 +1,60 @@
 
-.LoginPage {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .LoginPage h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .LoginPage form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .LoginPage form .AppInput {
-    margin-bottom: 15px;
-  }
-  
-  .LoginPage form .AppButton {
-    margin-top: 20px;
-  }
-  
+// .LoginPage {
+//   max-width: 400px;
+//   margin: 0 auto;
+//   padding: 20px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   background-color: #f9f9f9;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+// }
 
-  .AppInput input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .AppButton button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .AppButton button:hover {
-    background-color: #0056b3;
-  }
-  
-  .AppButton button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+// .LoginPage h1 {
+//   font-size: 24px;
+//   margin-bottom: 20px;
+// }
+
+// .LoginPage form {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .LoginPage form .AppInput {
+//   margin-bottom: 15px;
+// }
+
+// .LoginPage form .AppButton {
+//   margin-top: 20px;
+// }
+
+
+// .AppInput input {
+//   width: 100%;
+//   padding: 10px;
+//   font-size: 16px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   box-sizing: border-box;
+// }
+
+// .AppButton button {
+//   width: 100%;
+//   padding: 12px;
+//   font-size: 16px;
+//   color: #fff;
+//   background-color: #007bff;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .AppButton button:hover {
+//   background-color: #0056b3;
+// }
+
+// .AppButton button:disabled {
+//   background-color: #ccc;
+//   cursor: not-allowed;
+// }

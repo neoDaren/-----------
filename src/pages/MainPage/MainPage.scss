@@ -29,6 +29,7 @@
   .MainPage {
     grid-template-areas: "L M";
     grid-template-columns: 290px auto;
+
     .RightSide {
       display: none;
     }
@@ -38,6 +39,7 @@
 @media (max-width: 730px) {
   .MainPage {
     display: block;
+
     .LeftSide {
       display: none;
     }
@@ -45,7 +47,7 @@
 }
 
 .Navbar {
-  box-shadow: 0 0 10px var(--light-gray);
+  box-shadow: 0 0 10px var(--light-gray); 
   border-radius: 20px;
   padding: calc(1vw + 11px);
   background-color: var(--elems-bgc);
@@ -145,79 +147,79 @@
   }
 }
 
-// .UserElem {
-//   cursor: pointer;
-//   position: relative;
-//   list-style: none;
+.UserElem {
+  cursor: pointer;
+  position: relative;
+  list-style: none;
 
-//   display: flex;
-//   align-items: center;
-//   gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 
-//   padding: 15px;
-//   border-radius: 15px;
+  padding: 15px;
+  border-radius: 15px;
 
-//   transition: 200ms;
+  transition: 200ms;
 
-//   &:hover {
-//     background-color: var(--light-gray);
-//   }
+  &:hover {
+    background-color: var(--light-gray);
+  }
 
-//   &:active {
-//     transition: 100ms;
-//     background-color: var(--prime-color);
-//     p {
-//       color: white;
-//     }
+  &:active {
+    transition: 100ms;
+    background-color: var(--prime-color);
+    p {
+      color: white;
+    }
 
-//     .Badge {
-//       background-color: white;
-//       color: var(--text-color);
-//     }
-//   }
+    .Badge {
+      background-color: white;
+      color: var(--text-color);
+    }
+  }
 
-//   &:not(:last-child) {
-//     margin-bottom: 15px;
+  &:not(:last-child) {
+    margin-bottom: 15px;
 
-//     &::after {
-//       content: "";
-//       height: 1px;
-//       width: 80%;
-//       background-color: var(--light-gray);
+    &::after {
+      content: "";
+      height: 1px;
+      width: 80%;
+      background-color: var(--light-gray);
 
-//       position: absolute;
-//       bottom: -8px;
-//       left: 50%;
-//       transform: translateX(-50%);
-//     }
-//   }
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
-//   img {
-//     flex: 0 0 60px;
-//     height: 60px;
-//     width: 60px;
-//     border-radius: 50%;
-//     object-fit: cover;
-//   }
+  img {
+    flex: 0 0 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
-//   .user__description {
-//     flex: 1 1 auto;
+  .user__description {
+    flex: 1 1 auto;
 
-//     .main__text {
-//       margin-bottom: 5px;
-//       display: inline-block;
-//     }
-//   }
+    .main__text {
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+  }
 
-//   .secondary__text {
-//     font-size: calc(0.4vw + 8px); //? 14 - 1440 | 16 - 1920
-//     font-weight: 300;
+  .secondary__text {
+    font-size: calc(0.4vw + 8px); //? 14 - 1440 | 16 - 1920
+    font-weight: 300;
 
-//     &._online {
-//       color: var(--green);
-//     }
-//   }
-// }
+    &._online {
+      color: var(--green);
+    }
+  }
+}
 
 .WhatsNew {
   box-shadow: 0 0 10px var(--light-gray);
@@ -478,27 +480,27 @@
     }
   }
 
-  // .UserElem {
-  //   cursor: default;
-  //   padding: 0;
-  //   margin-bottom: 30px;
+  .UserElem {
+    cursor: default;
+    padding: 0;
+    margin-bottom: 30px;
 
-  //   &:hover {
-  //     background-color: initial;
-  //     scale: 1;
-  //   }
+    &:hover {
+      background-color: initial;
+      scale: 1;
+    }
 
-  //   &::after {
-  //     display: none; //? нижняя полоса в списке
-  //   }
+    &::after {
+      display: none; //? нижняя полоса в списке
+    }
 
-  //   img {
-  //     flex: 0 0 60px;
-  //     height: 60px;
-  //     border-radius: 50%;
-  //     object-fit: cover;
-  //   }
-  // }
+    img {
+      flex: 0 0 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
 
   &__text {
     margin-bottom: 20px;

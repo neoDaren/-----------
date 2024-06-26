@@ -1,7 +1,7 @@
 // import styled from "styled-components";
-
 // export const SCUserElem = styled.div`
- 
+
+
 //   cursor: pointer;
 //   position: relative;
 //   list-style: none;
@@ -16,19 +16,19 @@
 //   transition: 200ms;
 
 //   &:hover {
-//     background-color:${(props)=>props.theme.color.lightGray};
+//     background-color:  ${(props)=>props.theme.color.lightgray};
 //   }
 
 //   &:active {
 //     transition: 100ms;
-//     background-color: ${(props)=>props.theme.color.primeColor};
+//     background-color:  ${(props)=>props.theme.color.primeColor};
 //     p {
 //       color: white;
 //     }
 
 //     .Badge {
 //       background-color: white;
-//       color: ${(props)=>props.theme.color.textColor};
+//       color: ${(props)=>props.theme.color.textcolor};
 //     }
 //   }
 
@@ -39,7 +39,7 @@
 //       content: "";
 //       height: 1px;
 //       width: 80%;
-//       background-color: ${(props)=>props.theme.color.lightGray};
+//       background-color: ${(props)=>props.theme.color.lightgray};
 
 //       position: absolute;
 //       bottom: -8px;
@@ -70,10 +70,11 @@
 //     font-weight: 300;
 
 //     &._online {
-//       color: ${(props)=>props.theme.color.green};
+//       color:  ${(props)=>props.theme.color.green};
 //     }
 //   }
- 
+
+
 //     cursor: default;
 //     padding: 0;
 //     margin-bottom: 30px;
@@ -93,8 +94,9 @@
 //       border-radius: 50%;
 //       object-fit: cover;
 //     }
-
+  
 // `
+
 import styled from 'styled-components';
 
 

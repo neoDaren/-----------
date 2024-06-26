@@ -1,7 +1,9 @@
-import { createGlobalStyle } from "styled-components";
 
+import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
+
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +14,10 @@ body {
   min-width: 530px;
   margin: 0;
   font-family: "Inter";
-  background-color: ${(props)=> props.theme.color.bg};
-  color: var(--text-color);
+  background-color: ${(props)=>props.theme.color.bgc};
+  color: ${(props)=>props.theme.color.textcolor};
 }
+
 
 button,
 input {
@@ -32,7 +35,8 @@ a {
   }
 
   &:visited {
-    color: var(--text-color);
+  color: ${(props)=>props.theme.color.textcolor};
+    
   }
 }
 
@@ -50,22 +54,22 @@ button {
   padding: 12px 15px;
   font-size: inherit;
   border-radius: 10px;
-  background-color: var(--prime-color);
+  background-color:  ${(props)=>props.theme.color.primecolor};
   color: white;
   transition: 200ms;
 
   &:disabled {
-    background-color: var(--disabled-bgc);
+    background-color: ${(props)=>props.theme.color.disabledbgc};
   }
 
   &.primary {
-    background-color: var(--prime-color);
+    background-color: ${(props)=>props.theme.color.primecolor};
     color: white;
   }
 
   &.secondary {
-    background-color: var(--light-gray);
-    color: var(--placeholder-color);
+    background-color:  ${(props)=>props.theme.color.lightgray};
+    color: ${(props)=>props.theme.color.placeholdercolor};
   }
 
   &:disabled:hover {
@@ -94,7 +98,7 @@ input {
   transition: 200ms;
 
   &:is(:hover, :focus) {
-    border-color: var(--prime-color);
+    border-color:  ${(props)=>props.theme.color.primecolor};
   }
 }
 
@@ -102,6 +106,5 @@ input {
   input, button {
     padding: 10px 12px;
   }
-}`;
-
-
+}
+`

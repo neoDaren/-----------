@@ -1,21 +1,21 @@
+
 import { SCPost } from "./Post.style";
 
-interface IPostProps {
-    isLiked?: boolean;
-    isMarked?: boolean;
-    mainText: string;
-    userName: string;
-    regDate: string;
-    
+interface IPostProps{
+    isLiked?:boolean;
+    isMarked?:boolean;
+    mainText:string;
+    regDate:string;
+    userName:string;
 }
 
 
-export const Post = ({isLiked, isMarked, mainText, userName, regDate}: IPostProps) => {
+export const Post = ({isLiked,isMarked,mainText,userName,regDate}:IPostProps) => {
+       
     return (
         <SCPost $isLiked={isLiked} $isMarked={isMarked}>
-           
             <div className="UserElem">
-              <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
+              <img src="/img/users/aleksandr-maykov.jpeg" alt="User" />
               <div className="user__description">
                 <a href="#" className="main__text">
                   {userName}
@@ -24,38 +24,38 @@ export const Post = ({isLiked, isMarked, mainText, userName, regDate}: IPostProp
               </div>
             </div>
             <p className="Post__text">{mainText}</p>
-            <div className="media-container">
+            {/* <div className="media-container">
               <img
                 className="media__item"
-                src="./img/post/nature-1.png"
+                src="/img/post/nature-1.png"
                 alt="Post Item"
               />
               <img
                 className="media__item"
-                src="./img/post/nature-2.png"
+                src="/img/post/nature-2.png"
                 alt="Post Item"
               />
               <img
                 className="media__item"
-                src="./img/post/nature-3.png"
+                src="/img/post/nature-3.png"
                 alt="Post Item"
               />
               <img
                 className="media__item"
-                src="./img/post/nature-4.png"
+                src="/img/post/nature-4.png"
                 alt="Post Item"
               />
               <img
                 className="media__item"
-                src="./img/post/nature-5.png"
+                src="/img/post/nature-5.png"
                 alt="Post Item"
               />
               <img
                 className="media__item"
-                src="./img/post/nature-6.png"
+                src="/img/post/nature-6.png"
                 alt="Post Item"
               />
-            </div>
+            </div> */}
             <div className="PostControls">
               <div className="icon-wrapper like">
                 <span className="count likes-count">-500</span>
@@ -111,7 +111,7 @@ export const Post = ({isLiked, isMarked, mainText, userName, regDate}: IPostProp
               </div>
             </div>
             <div className="CommentBlock">
-              <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
+              <img src="/img/users/aleksandr-maykov.jpeg" alt="User" />
               <div className="comment__description">
                 <a href="#" className="comment__owner">
                   Карина Савина
@@ -137,6 +137,8 @@ export const Post = ({isLiked, isMarked, mainText, userName, regDate}: IPostProp
               className="icon icon-more"
               viewBox="0 0 25 5"
               xmlns="http://www.w3.org/2000/svg"
+              // onClick={()=>useIsSettingOpen(!isSettingOpen)}
+        
             >
               <g id="more">
                 <circle id="ellipse" cx="22.5" cy="2.5" r="2.5" />
@@ -144,7 +146,6 @@ export const Post = ({isLiked, isMarked, mainText, userName, regDate}: IPostProp
                 <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
               </g>
             </svg>
-         
-        </SCPost>
-    );           
+          </SCPost>
+    );
 };

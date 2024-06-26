@@ -1,12 +1,12 @@
 import { SCUserElem } from "./UserElem.style";
 interface IUserElem {
-  linkImg: string;
   mainText: string;
+  linkImg: string;
   secondaryText: string;
-  online?: string
+  online?:string
 }
 
-export const UserElem = ({linkImg, mainText, secondaryText, online}: IUserElem) => {
+export const UserElem = ({linkImg, mainText, secondaryText,online}: IUserElem) => {
     return (
         <SCUserElem>
                 <img src={linkImg} alt="User" />
@@ -19,4 +19,4 @@ export const UserElem = ({linkImg, mainText, secondaryText, online}: IUserElem) 
     );
 };
 
-
+// "./img/profile/profile-img-1.jpeg"N E WРазвитие

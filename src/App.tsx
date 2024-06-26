@@ -1,9 +1,9 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { LoginPage } from './pages/LoginPage/LoginPage.tsx'
 import { MainPage } from './pages/MainPage/MainPage.tsx'
 import { ProfilePage } from './pages/ProfilePage/ProfilePage.tsx'
 import {RegPage, } from './pages/RegPage/RegPage.tsx'
-import { PostPage } from './pages/PostPage/PostPage.tsx';
+import PostPage from './pages/PostPage/PostPage.tsx'
 export const App = () => {
   const router = createBrowserRouter([
   {
@@ -20,13 +20,13 @@ export const App = () => {
     element:<RegPage/>
   },
   {
-    path:"/profile-page",
+    path:"/profil-page",
     element:<ProfilePage/>
   },
   {
-    path:'/post/:postId',
-    element: <PostPage/>,
-}
+    path:"/post/:postId",
+    element:<PostPage/>
+  },
   ])
   return(
   <>

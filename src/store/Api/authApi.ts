@@ -1,56 +1,65 @@
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { baseUrl} from '../../utils/baseUrl';
 
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { baseQueryUrl } from '../../utils/baseQueryUrl'
+interface IRegistrationUserPayload {
+    email:string,
+    password:string,
+    name:string,
+    phone_number:string,
+    user_city:string,
+    user_id?: number;
+}
 
-interface IRegisterUserPayload{
-    name: string,
-    email: string,
-    phone_number: string,
-    password: string,
-    user_city: string,
+interface IRegistrationUserResponse {
+
+    user_id?:number;
+    email:string,
+    password:string,
+    name:string,
+    phone_number:string,
+    user_city:string,
 }
-interface IRegisterUserResponse{
-    status: number;
-    user_id: number;
-}
-interface ILoginUserResponse extends IRegisterUserResponse {}
+
+interface ILoginUserResponse extends  IRegistrationUserResponse{}
 interface ILoginUserPayload {
- 
-  email: string,
-    password: string
+email:string,
+password:string,
+
 }
-interface IGetUserResponse {
+
+interface IGetUserResponse{
     status: number;
-    message: {
-        mail: string;
-        phone_number: string;
-        user_id: number;
-        name: string;
-        reg_date: string;
-        city: string;
+    message:{
+    mail:string,
+    user_id:string,
+    name:string,
+    phone_number:string,
+    city:string,
+    reg_date: string;
+
     }
 }
 export const authApi = createApi({
-  reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: baseQueryUrl}),
+  reducerPath: 'authApi', 
+  baseQuery: fetchBaseQuery({ baseUrl:baseUrl,}),
   endpoints: (builder) => ({
-    registerUser: builder.mutation<IRegisterUserResponse, IRegisterUserPayload>({
-      query: (payload)=>({
-        url: 'registration',
-        method: 'POST',
-        body: payload,
+    registerUser: builder.mutation<IRegistrationUserPayload,IRegistrationUserResponse>({
+      query: (payload) =>({
+        url:"registration",
+        method:"POST",
+        body:payload,
       }),
     }),
-   loginUser: builder.mutation<ILoginUserResponse, ILoginUserPayload>({
-    query: (payload)=>({
-      url: 'login',
-      method: 'POST',
-      body: payload,
+    loginUser: builder.mutation<ILoginUserResponse,ILoginUserPayload>({
+        query:(payload)=>({
+            url:"login",
+            method:"POST",
+            body:payload,
+        }),
     }),
-   }),
-   getUser: builder.query<IGetUserResponse, string>({
-    query:(userId) => `/user?user_id=${userId}`,
-   })
+    getUser: builder.query<IGetUserResponse, string>({
+        query: (userId) => `/user?user_id=${userId}`,
+    }),
   }),
 })
-export const {useGetUserQuery, useLoginUserMutation, useRegisterUserMutation}=authApi
+  export const { useGetUserQuery,useLoginUserMutation, useRegisterUserMutation }=authApi  

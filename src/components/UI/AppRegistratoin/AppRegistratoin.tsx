@@ -6,7 +6,7 @@ export const AppRegistration = () => {
     return (
         <SCAppRegistration>
                  <span>
-          У вас нет аккаунта? <a href="http://localhost:5174/registration-page">Зарегистрироваться</a>
+          У вас нет аккаунта? <a href="http://localhost:5173/registration-page">Зарегистрироваться</a>
         </span>
         <p>Войти с помощью</p>
         <div className="icons-wrapper">

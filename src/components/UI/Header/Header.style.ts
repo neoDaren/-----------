@@ -75,12 +75,12 @@ export const SCHeader = styled.div`
     top: 50%;
     left: 25px;
     transform: translateY(-50%);
-    fill: var(--placeholder-color);
+    fill:  ${(props)=>props.theme.color.placeholdercolor};
   }
 
   &:has(input:is(:hover, :focus)) {
     .icon {
-      fill: var(--prime-color);
+      fill: ${(props)=>props.theme.color.primecolor};
     }
   }
 }
@@ -100,7 +100,7 @@ export const SCHeader = styled.div`
     cursor: pointer;
     width: 23px;
     height: 23px;
-    fill: var(--gray);
+    fill: ${(props)=>props.theme.color.gray};
 
     margin-right: calc(1.3vw + 5.8px);
     border: 1px solid transparent;
@@ -108,15 +108,15 @@ export const SCHeader = styled.div`
     transition: 200ms;
 
     &:hover {
-      fill: var(--prime-color);
-      border-color: var(--light-gray);
-      background-color: var(--bgc);
+      fill:   ${(props)=>props.theme.color.primecolor};
+      border-color:  ${(props)=>props.theme.color.lightgray};
+      background-color: ${(props)=>props.theme.color.bgc};
     }
 
     &:active {
       transition: 100ms;
       fill: white;
-      background-color: var(--prime-color);
+      background-color:${(props)=>props.theme.color.primecolor};
     }
   }
 
@@ -155,7 +155,9 @@ export const SCHeader = styled.div`
 
     &._active {
       transform: rotate(-180deg);
-      fill: var(--prime-color);
+      fill: ${(props)=>props.theme.color.primecolor};
     }
 }
+
+
 `

@@ -1,10 +1,9 @@
 
+import { useTypedSelector } from "../../hooks/useTypeSelector";
 import "./ProfilePage.scss";
-import { useTypeSelector } from "../../hooks/useTypeSelector";
-
 
 export const ProfilePage = () => {
-  const user = useTypeSelector((store)=> store.userSlice.user)
+  const user = useTypedSelector((store)=> store.userSlice.user)
   return (
     <div className="ProfilePage">
       <aside className="LeftSide">
